@@ -13,7 +13,17 @@ $(document).ready(function(){
     var operator = "";
     var totaldiv = $("#total");
     totaldiv.text("0");
-
-    //Add your .click() here!
+    $("#numbers > a").not("#clear,#clearall").click(function(){
+		number += $(this).text();
+		totaldiv.text(number);
+		testNumLength(number);
+    });
+    //Add another .click() here!
+    $("#operators > a").not("#equals").click(function(){
+        operator += $(this).text();
+        newnumber = number;
+        number = "";
+        $(totaldiv).text(0);
+    });
 
 });
