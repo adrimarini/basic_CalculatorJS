@@ -18,12 +18,18 @@ $(document).ready(function(){
 		totaldiv.text(number);
 		testNumLength(number);
     });
-    //Add another .click() here!
     $("#operators > a").not("#equals").click(function(){
-        operator += $(this).text();
-        newnumber = number;
-        number = "";
-        $(totaldiv).text(0);
+		operator = $(this).text();
+		newnumber = number;
+		number = "";
+		totaldiv.text("0");
     });
-
+    $("#clear,#clearall").click(function(){
+		number = "";
+		totaldiv.text("0");
+		if ($(this).attr("id") === "clearall") {
+			newnumber = "";
+		}
+    });
+    //Add your last .click() here!
 });
